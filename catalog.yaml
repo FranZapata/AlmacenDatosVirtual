@@ -1,0 +1,56 @@
+users:
+  fields:
+  - name: id
+    type: int
+    primary: true
+  - name: name
+    type: str
+  - name: email
+    type: str
+    unique: true
+  mapping:
+    driver: redis
+    host: localhost
+    port: 6379
+    database: test
+    collection: users
+contacts:
+  fields:
+  - name: id
+    type: int
+    primary: true
+  - name: title
+    type: str
+  - name: email
+    type: str
+  - name: user
+    type: int
+  mapping:
+    driver: mysql
+    host: localhost
+    port: 3306
+    user: root
+    password: root
+    database: test
+    collection: contacts
+messages:
+  fields:
+  - name: id
+    type: int
+    primary: true
+  - name: title
+    type: str
+  - name: content
+    type: str
+  - name: date
+    type: float
+  - name: sender
+    type: int
+  - name: receiver
+    type: int
+  mapping:
+    driver: mongo
+    host: localhost
+    port: 27017
+    database: test
+    collection: messages
